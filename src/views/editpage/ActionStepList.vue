@@ -181,7 +181,10 @@
         },
         //步骤勾选
         handleSelectionChange(val){
-          this.selectedSteps = val
+          let arr = this.actionSteps.filter(step => {
+            return val.indexOf(step) !== -1
+          })
+          this.selectedSteps = arr
         },
         //点击select框
         selectAction(type){
