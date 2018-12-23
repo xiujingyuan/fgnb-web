@@ -33,6 +33,9 @@ export default {
       else if(this.$route.name === 'Page'){
         return new Date()
       }
+      else if(this.$route.name === 'Agent'){
+        return new Date()
+      }
     }
   }
 }

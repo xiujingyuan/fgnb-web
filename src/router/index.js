@@ -140,6 +140,19 @@ export const constantRouterMap = [
   },
 
   {
+    path:'/agent',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Agent',
+        component: ()=> import('@/views/agent/index'),
+        meta: { title: 'Agent', icon: 'node' }
+      }
+    ]
+  },
+
+  {
     path:'/editPage/:pageId',
     component: Layout,
     hidden:true,
