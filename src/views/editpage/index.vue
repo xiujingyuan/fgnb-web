@@ -15,23 +15,23 @@
             <SaveAction :project-id="projectId" :action-type="2" :page-id="pageId" :actionId="actionIdOfUpdate" @saveActionSuccess="onSaveActionSuccess"></SaveAction>
           </el-tab-pane>
           <el-tab-pane label="修改page">
-            <el-form :model="savePageForm" inline>
+            <el-form :model="savePageForm" label-width="100px">
               <el-form-item label="page名" :rules="[{required: true}]">
                 <el-input v-model="savePageForm.pageName" clearable></el-input>
               </el-form-item>
               <el-form-item label="描述">
                 <el-input v-model="savePageForm.description" clearable></el-input>
               </el-form-item>
-              <el-form-item label="图片下载地址" :rules="[{required: true}]">
+              <el-form-item label="图片下载地址">
                 <el-input v-model="savePageForm.imgUrl" clearable></el-input>
               </el-form-item>
-              <el-form-item label="图片宽" :rules="[{required: true}]">
+              <el-form-item label="图片宽">
                 <el-input v-model="savePageForm.imgWidth" clearable></el-input>
               </el-form-item>
-              <el-form-item label="图片高" :rules="[{required: true}]">
+              <el-form-item label="图片高">
                 <el-input v-model="savePageForm.imgHeight" clearable></el-input>
               </el-form-item>
-              <el-form-item label="图片布局" :rules="[{required: true}]">
+              <el-form-item label="图片布局">
                 <el-input v-model="savePageForm.windowHierarchyJson" clearable></el-input>
               </el-form-item>
               <el-form-item label="设备id">
