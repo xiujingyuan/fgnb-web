@@ -15,7 +15,8 @@
       <el-select v-model="queryListForm.projectType" placeholder="项目类型" @visible-change="getProjectTypes">
         <el-option v-for="projectType in projectTypes" :label="projectType.projectTypeName" :value="projectType.projectTypeId">
           <svg-icon style="vertical-align: middle" v-if="projectType.projectTypeId === 1" icon-class="android"></svg-icon>
-          <svg-icon style="vertical-align: middle" v-else icon-class="ios"></svg-icon>
+          <svg-icon style="vertical-align: middle" v-else-if="projectType.projectTypeId === 2" icon-class="ios"></svg-icon>
+          <svg-icon style="vertical-align: middle" v-else icon-class="web"></svg-icon>
           <span>{{ projectType.projectTypeName }}</span>
         </el-option>
       </el-select>
@@ -32,7 +33,8 @@
         <el-table-column label="项目类型" align="center">
           <template scope="scope">
             <svg-icon v-if="scope.row.projectType === 1" icon-class="android"></svg-icon>
-            <svg-icon v-else icon-class="ios"></svg-icon>
+            <svg-icon v-else-if="scope.row.projectType === 2" icon-class="ios"></svg-icon>
+            <svg-icon v-else icon-class="web"></svg-icon>
           </template>
         </el-table-column>
         <el-table-column label="创建时间" align="center" prop="createTime"></el-table-column>

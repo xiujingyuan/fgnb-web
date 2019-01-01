@@ -8,7 +8,8 @@
         <el-table-column label="项目类型" align="center">
           <template scope="scope">
             <svg-icon v-if="scope.row.projectType === 1" icon-class="android"></svg-icon>
-            <svg-icon v-else icon-class="ios"></svg-icon>
+            <svg-icon v-else-if="scope.row.projectType === 2" icon-class="ios"></svg-icon>
+            <svg-icon v-else icon-class="web"></svg-icon>
           </template>
         </el-table-column>
         <el-table-column label="项目" prop="projectName" align="center"></el-table-column>
