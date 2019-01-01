@@ -7,11 +7,12 @@
           <div class="circle"></div>
         </template>
       </el-table-column>
-      <el-table-column label="agent" align="center">
+      <el-table-column label="agent" align="center" width="200">
         <template scope="scope">
           {{ scope.row.agentIp + ":" + scope.row.agentPort }}
         </template>
       </el-table-column>
+      <el-table-column label="chromedriver端口" prop="chromeDriverPort" align="center" width="150"></el-table-column>
       <el-table-column label="设备" align="center">
         <template scope="scope">
           <el-table :data="scope.row.devices" size="mini">
