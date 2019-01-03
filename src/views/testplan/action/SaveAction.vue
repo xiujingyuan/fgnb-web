@@ -128,13 +128,13 @@
           //变量
           action.actionVars = this.$refs.ActionVarList.actionVars
           console.log('Debug Action',action)
-          //agentIp deviceId uiautomaotor_server_port
+          //agentIp deviceId port
           let agentIp = localStorage.getItem("agentIp")
           let deviceId = localStorage.getItem("deviceId")
-          let uiautomatorServerPort = localStorage.getItem("uiautomator_server_port")
+          let port = localStorage.getItem("port")
           action.agentIp = agentIp
           action.deviceId = deviceId
-          action.uiautomatorServerPort = uiautomatorServerPort
+          action.port = port
           this.debugActionBtnLoading = true
           debugAction(action).then(resp=>{
             this.$notify.success(resp.msg)

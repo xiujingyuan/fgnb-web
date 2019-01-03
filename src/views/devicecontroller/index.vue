@@ -322,7 +322,7 @@
           //开启UIautomator端口成功,将端口写入localStorage
           let msg = message.data
           let port = msg.substring(msg.indexOf('端口为:')+4,msg.indexOf(',sessionid'))
-          localStorage.setItem("uiautomator_server_port",port)
+          localStorage.setItem("port",port)
         }
         uiautomator2_msg.innerHTML = message.data
       }

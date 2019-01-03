@@ -12,6 +12,11 @@
           {{ scope.row.agentIp + ":" + scope.row.agentPort }}
         </template>
       </el-table-column>
+      <el-table-column label="调试web" align="center" width="150">
+        <template scope="scope">
+          <el-button @click="debugWeb(scope.row)" type="primary" size="mini">调试web</el-button>
+        </template>
+      </el-table-column>
       <el-table-column label="chromedriver端口" prop="chromeDriverPort" align="center" width="150"></el-table-column>
       <el-table-column label="设备" align="center">
         <template scope="scope">
@@ -45,6 +50,11 @@ export default {
       listOfOnline().then(resp=>{
         this.agents = resp.data
       })
+    },
+    debugWeb(row){
+      localStorage.agentIp = row.agentIp
+      localStorage.port = row.chromeDriverPort
+      this.$notify.success('选择'+row.agentIp+'调试web')
     }
   },
   created(){
